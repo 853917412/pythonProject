@@ -7,9 +7,12 @@
 # for i in range(n+1):
 #     i = i+i
 # print(i)
-x = 'hello soao jjj'
-x = x.split(' ')
-print(' '.join(x[::-1]))
+
+a = (1,4,['a',1])
+b =['2',2,3]
+x = zip(a,b)
+print(x)
+
 
 
 
