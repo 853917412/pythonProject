@@ -1,0 +1,83 @@
+题目1：
+把以下字典分行添加到文件当中：
+person_info = [
+    {
+        "name": "明鹏程",
+        "age": 22,
+        "gender": "男",
+        "hobby": "学习",
+        "motto": "学习使我快乐"
+    },
+    {
+        "name": "萌笑天",
+        "age": 20,
+        "gender": "女",
+        "hobby": "拿30K offer",
+        "motto": "下次拿个40K 的"
+    },
+]
+得到一个 info.txt 的文件：
+name,age,gender,hobby,motto
+明鹏程,22,男,学习, 学习使我快乐
+萌笑天,20,女,拿30K offer,下次拿个40K 的
+
+
+题目2：
+手工准备cases.txt 文件，文件中手工复制 2 行数据：
+url:/futureloan/mvc/api/member/register@mobile:18866668888@pwd:123456
+url:/futureloan/mvc/api/member/recharge@mobile:18866668888@pwd:1000
+请利用上课所学知识，把txt里面的两行内容取出然后保存到一个列表和字典当中：（可定义函数）
+列表当中，有2个字典 
+每一行的数据，就是一个字典。
+字典的key分别是：url,mobile,pwd
+
+========================================================
+作业参考答案
+题目1:
+person_info = [
+    {
+        "name": "明鹏程",
+        "age": 22,
+        "gender": "男",
+        "hobby": "学习",
+        "motto": "学习使我快乐"
+    },
+    {
+        "name": "萌笑天",
+        "age": 20,
+        "gender": "女",
+        "hobby": "拿30K offer",
+        "motto": "下次拿个40K 的"
+    },
+]
+with open("info.txt",mode="w",encoding="utf-8") as fs:
+    fs.writelines(["name, ","age, ","gender, ","hobby, ","motto\n"])
+    for item in person_info:
+        # 若不是字符串类型，则转换为字符串类型
+        for key, value in item.items():
+            item[key] = str(value)
+        # 字符串的拼接操作
+        s = ", ".join(item.values())
+        s = s + "\n"
+        # 写入文件当中
+        fs.write(s)
+
+题目2：
+fs = open("cases.txt",encoding="utf-8")
+new_list = []
+# 按行读取文件中的数据
+for str_line in fs.readlines():
+    new_dict = {}
+    # 对每一行数据，去掉首尾的换行符
+    new_str = str_line.strip("\n")
+    # 对每一行数据，通过@分割成列表。
+    str_list = new_str.split("@")
+    # 遍历分割后的列表
+    for item in str_list:
+        # 按照:分割。得到新列表。存放的就是[key,value]
+        temp_list = item.split(":")
+        # 加入字典当中
+        new_dict[temp_list[0]] = temp_list[1]
+
+    new_list.append(new_dict)
+print(new_list)

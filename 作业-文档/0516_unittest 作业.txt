@@ -1,0 +1,11 @@
+使用 unittest,  编写 3 个对以下函数的测试用例。
+
+
+def login(username=None, password=None):
+if username is None or password is None:
+return {"code": "400", "msg": "用户名或密码为空"}
+if username == 'yuz' and password == '123':
+return {"code": "200", "msg": "登录成功"}
+return {"code": "300", "msg": "用户名或密码错误"}
+
+

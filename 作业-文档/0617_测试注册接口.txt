@@ -1,0 +1,16 @@
+根据上课内容，测试 mall.lemonban.com:8107 的注册接口。
+
+
+先不要用 excel 替换，测试数据直接写到用例数据当中， 熟悉数据库和接口关联的操作。
+
+
+需要用到接口数据：
+
+- PUT /user/sendRegisterSms    {"mobile":"18111113333"}
+- 需要通过数据库获取： validCode
+- PUT /user/checkRegisterSms   {"mobile":"18111113333","validCode":"925152"}
+- 得到 checkRegisterSmsFlag
+- PUT /user/registerOrBindUser
+- {"appType":3,"checkRegisterSmsFlag":"54ea3fec5468427ebab64fc83a3bdc17","mobile":"18111113333","userName":"yuze123","password":"123456","registerOrBind":1,"validateType":1}
+
+全部评论 共0条

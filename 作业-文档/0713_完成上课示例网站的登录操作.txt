@@ -1,0 +1,9 @@
+地址：https://petstore.octoperf.com/actions/Catalog.action
+
+
+1、从首页点击进入登录界面
+
+2、登录界面完成登录步骤
+
+
+所有定位方式使用 xpath 表达式

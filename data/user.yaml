@@ -1,0 +1,8 @@
+-input:
+  name: id
+  value: kw
+  text: lol
+ button:
+  name: id
+  value: su
+

@@ -1,0 +1,71 @@
+ps：本次作业提交形式：txt文件或者py文件即可(带上题目和答案一起)。
+一、必做题
+1、下面变量名正确的是( a,b)
+A. name
+B. num1
+C. 1_num
+D. name_A_1
+
+
+2、Python不支持的数据类型有（a ）
+A、char  B、int  C、float D、list
+
+
+
+4、Python语言语句块的标记是(  c )
+A 分号     B 逗号  C 缩进  D /
+
+
+5、以下不是python中的关键字（ d）
+A  raise    B with    C import   D  final
+
+
+6、Python 中，以下哪个函数是用于输出内容到终端的？（c ）
+A echo    B output   C print   D console.log
+
+
+7、以下哪个符号是用作 Python 的注释？（ d）
+A *        B comment    C //       D #
+
+
+8、以下哪个标记是用作 Python 的多行注释？（ a）
+A '''        B ///               C ###        D comment
+
+
+9、Python 中，以下哪个变量的赋值是正确的？（ c）
+A var a=2     B int a=2   C a=2     D variable =2
+
+
+10、假设你有一个变量 "example"，如何判断它的类型？( c)
+A  getType(example)
+B  Type(example)
+C  type(example)
+D  example.type:
+
+
+11、下面哪些不能作为变量名，为什么？
+find
+7val
+add.
+def
+pan
+-print
+open_file
+FileName
+9prints
+INPUT
+ls(字母l)
+user^name
+list1
+str
+_888
+is
+true
+none
+try
+
+
+12、变量命名规范有哪些？
+
+
+13、python 如何添加注释？
