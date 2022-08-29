@@ -22,7 +22,7 @@ Forum: http://testingpai.com
 for val in test_list:
     print(val)
 
-    
+
 4、判断是否是可迭代对象
 from collections.abc import Iterable
 test_list = ['a','b','c']

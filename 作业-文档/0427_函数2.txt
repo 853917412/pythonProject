@@ -1,10 +1,25 @@
 题目2：（提示）不需要用不定长参数，把数据存到列表中，for 循环求乘积。
 
+lis1 = input("please enter: ")
+lis1 = lis1.split(',')
 
+def p_1(lis1):
+    a=1
+    for i in lis1:
+        a = a*int(i)
+    print("{}".format(a%20))
+p_1(lis1)
 定义函数，将输入的所有数字相乘之后对20取余数，用户输入的数字个数不确定。
 
 题目3：列表去重函数
-
+def remove_element(a_list):
+    x = []
+    for i in a_list:
+        if i not in x:
+            x.append(i)
+        else:
+            pass
+    return x
 定义一个函数 def remove_element(a_list):，
 
 将列表[10, 1, 2, 20, 10, 3, 2, 1, 15, 20, 44, 56, 3, 2, 1]去除重复元素(不能用集合去重，要使用for循环)

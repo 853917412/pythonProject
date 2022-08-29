@@ -35,13 +35,34 @@ c.如果输入0，退出循环
 d.输入其他内容，提示：“输入有误，请重新输入！”
 
 提示：本题可以使用if和while循环，同时需要校验用户的输入是否正确。不用考虑浮点数等情况。
-
+di = {1:'周一',2:'周二',3:'周三',4:'周四',5:'周五'}
+while True:
+    n = int(input("please："))
+    if 1<=n<=5:
+        print("{}".format(di[n]))
+    elif 5<n<=7:
+        print("周末")
+    elif n==0:
+        break
+    else:
+        print("please input again")
 题目5：编写程序实现，
 
 在程序中预设一个0~9之间的整数(预设就是指自己指定一个数字即可)，让用户通过键盘输入所猜的数，如果大于预设的数，显示“遗憾，太大了”，
 
 小于预设的数，显示“遗憾，太小了”，如此循环，直至猜中该数，显示“预测N次，你猜中了！”，其中N是用户输入数字的次数。
-
+n = None
+result = 7
+a = 0
+while n!= result:
+    n = int(input("please enter a number"))
+    a+=1
+    if n<result:
+        print("预测{}次，{}比它小".format(a,n))
+    elif n>result:
+        print("预测{}次，{}比它大".format(a,n))
+    elif n == result:
+        print("答对啦")
 提示：使用while无限循环，当猜中时break
 
 
