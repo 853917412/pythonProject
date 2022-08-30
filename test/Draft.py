@@ -53,10 +53,59 @@ def p_4(nums):
         x = 150 * 0.4463 + 250 * 0.4663 + (nums - 400) * 0.5663
         print('{:.1f}'.format(x))
         return x
-round()
 
-p_4(267)
 
+class Solution:
+    def __init__(self) -> None:
+        pass
+
+    # def solution(self, n, arr):
+    #     result = 0
+    #     for i in arr:
+    #         result = result + i  #计算所有花瓣数的和
+    #
+    #     if result % 2 != 0:     #如果所有花瓣数的和为奇数，则这个值即为组合花瓣为奇数的最大值
+    #         return result
+    #
+    #     else:
+    #         x = []
+    #         for i in arr:          #遍历花瓣列表
+    #             if i % 2 != 0:     #将花瓣列表内的奇数逐个放入x列表中
+    #                 x.append(i)
+    #             else:
+    #                 pass
+    #         if x==[]:              #如果所有花瓣均为偶数，则返回0，无法形成奇数值
+    #             return 0
+    #         else:                 #由于当前花瓣和为偶数，为使结果为奇必须减去一个奇数，减去花瓣列表内的最小奇数则能形成一个最大奇数值
+    #             return (result - min(x))
+
+    # def solution(self, n, arr):
+    #     result = 0
+    #     minx = 1000
+    #     for i in arr:
+    #         if i%2 != 0:
+    #             minx = min(minx,i)
+    #         result = result+i
+    #     if result % 2 == 0:
+    #         return result-minx
+    #     else:
+    #         return result
+
+
+
+
+
+# if __name__ == "__main__":
+#     n = int(input().strip())
+#
+#     arr = [int(item) for item in input().strip().split()]
+#
+#     s = Solution()
+#     result = s.solution(n, arr)
+#
+#     print(result)
+
+import sys
 
 
 
