@@ -23,7 +23,14 @@ def remove_element(a_list):
 定义一个函数 def remove_element(a_list):，
 
 将列表[10, 1, 2, 20, 10, 3, 2, 1, 15, 20, 44, 56, 3, 2, 1]去除重复元素(不能用集合去重，要使用for循环)
-
+def p_1(x):
+    a = []
+    for i in x:
+        if i in a:
+            pass
+        else:
+            a.append(i)
+    return a
 题目4：通过定义一个计算器函数，调用函数传递两个参数，
 
 然后获取用户输入，如果用户输入1，对2个参数做加法运算，并返回结果。
