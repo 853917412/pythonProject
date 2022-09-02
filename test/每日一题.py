@@ -85,20 +85,36 @@ class Solution:
 给你三个字符串 firstWord、secondWord 和 targetWord ，每个字符串都由从 'a' 到 'j' （含'a' 和 'j' ）的小写英文字母组成。
 如果firstWord 和 secondWord 的 数值之和 等于 targetWord 的数值，返回 true ；否则，返回 false 。
 """
-def p_1880(FirstWord,SecondWord):
-    a = []
-    b = []
-    word = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-    number = [0, 1, 2, 3, 4, 5, 6, 7,8,9]
-    dic = dict(zip(word, number))
-    print (dic)
-    for i in FirstWord:
-        a.append(dic[i])
-    for j in SecondWord:
-        b.append(dic[j])
-    print(a, b)
-    a = "".join('%s' %id for id in a)
-    b = "".join('%s' %id for id in b)
-    return int(a)+int(b)
-print(p_1880(FirstWord= 'acb', SecondWord='cba'))
+def p_1880(**kwargs):
+
+    def find(dic1):
+        result = 0
+        for i in dic1:
+            result = result *10 +(ord(i)-97)
+        return int(result)
+    return find(kwargs['firstWord'])+find(kwargs['secondWord'])==find(kwargs['targetWord'])
+p_1880(firstWord = 'abc',secondWord = 'cbd',targetWord = 'cbb')
+"""
+给你一个数组prices，其中prices[i]是商店里第i件商品的价格。
+商店里正在进行促销活动，如果你要买第i件商品，那么你可以得到与 prices[j] 
+相等的折扣，其中j是满足j > i且prices[j] <= prices[i]的最小下标，如果没有满足条件的j，你将没有任何折扣。
+请你返回一个数组，数组中第i个元素是折扣后你购买商品 i最终需要支付的价格。
+"""  #!!!!!!!!!!!!
+def finalPrices( prices: List[int]) -> List[int]:
+    n = len(prices)
+    result = []
+    for i in range(n):
+        j = i+1
+        while j<n:
+            if prices[j] <= prices[i]:
+                result.append(prices[i] - prices[j])
+                break
+            j += 1
+        if len(result) != i+1:
+            result.append(prices[i])
+    return result
+print(finalPrices([4,7,1,9,4,8,8,9,4]))
+
+
+
 
