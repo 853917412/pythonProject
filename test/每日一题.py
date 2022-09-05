@@ -93,7 +93,7 @@ def p_1880(**kwargs):
             result = result *10 +(ord(i)-97)
         return int(result)
     return find(kwargs['firstWord'])+find(kwargs['secondWord'])==find(kwargs['targetWord'])
-p_1880(firstWord = 'abc',secondWord = 'cbd',targetWord = 'cbb')
+
 """
 给你一个数组prices，其中prices[i]是商店里第i件商品的价格。
 商店里正在进行促销活动，如果你要买第i件商品，那么你可以得到与 prices[j] 
@@ -114,7 +114,27 @@ def finalPrices( prices: List[int]) -> List[int]:
             result.append(prices[i])
     return result
 print(finalPrices([4,7,1,9,4,8,8,9,4]))
-
-
+"""
+给你一个大小为 rows x cols 的矩阵 mat，其中 mat[i][j] 是 0 或 1，请返回 矩阵mat 中特殊位置的数目 。
+特殊位置 定义：如果 mat[i][j] == 1 并且第 i 行和第 j 列中的所有其他元素均为 0（行和列的下标均 从 0 开始 ），则位置 (i, j) 被称为特殊位置。
+"""
+def p_1582(mat):
+    e = 0
+    for i in range(len(mat)):
+        result = 0
+        if mat[i].count(1) == 1:
+            for j in range(len(mat[i])):
+                if  mat[i][j] == 1:
+                    y = j
+                    break
+            for i in range(len(mat)):
+                if mat[i][y] == 1:
+                    result +=1
+                if mat[i][y] == 0:
+                    pass
+            if result == 1:
+                e+=1
+    print(e)
+    return e
 
 
