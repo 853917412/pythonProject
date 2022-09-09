@@ -3,12 +3,14 @@
 
 from typing import List
 import traceback
-try:
-    raise ValueError("hahaha")
-except Exception as e:
-    print(e)
-    print(traceback.print_exc())
-
-
+class DOG:
+    name1 = 'XX'
+    def __init__(self):
+        self.name = 123
+    def eat(self,x):
+        print("吃{}".format(x))
+x = DOG()
+print(x.name,x.name1)
+x.eat("shit")
 
 
