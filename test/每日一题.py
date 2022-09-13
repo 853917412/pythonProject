@@ -164,3 +164,24 @@ if __name__ == '__main__':
         e = ' ' * x
         larr = e.join(larr)
         return larr + (' ' * y)
+    """
+    给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+    """
+    def p_670(self, num: int) -> int:
+        x = None
+        num = list(str(num))
+        nums = sorted(num,reverse=True)
+        if num == nums:
+            return int(''.join(num))
+        for i in range(len(nums)):
+            if num[i] != nums[i]:
+                x = i
+                break
+        a = num[x]
+        for i in range(len(num)):
+            if num[i] == nums[x]:
+                sub = i
+        b = sub
+        num[x] = nums[x]
+        num[b] = a
+        print(int(''.join(num)))

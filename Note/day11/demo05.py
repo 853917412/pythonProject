@@ -10,26 +10,26 @@ Forum: http://testingpai.com
 ============================
 """
 
-"""
+
 class Dog01:
     name = "大黄"
     def __init__(self,age):
         self.age = age
 class Dog02:
-    name = "大黄"
+    name = "大白"
     def __init__(self,age):
         self.my_dog = Dog01(age=age)
         print(self.my_dog.name)
         print(self.my_dog.age)
         print(Dog01.name)
+        print(Dog02.name)
 Dog02(20)
 
-"""
 
 
-name="小黑"
-print(__name__) # day11.demo05
-
-if __name__ == '__main__':
-    print(__name__)
-    print(name)
+# name="小黑"
+# print(__name__) # day11.demo05
+#
+# if __name__ == '__main__':
+#     print(__name__)
+#     print(name)
