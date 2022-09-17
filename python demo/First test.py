@@ -7,7 +7,6 @@ import warnings
 from ddt import ddt, data, unpack, file_data
 from selenium import webdriver
 
-
 # 创建UnitTest对象，必须继承于unittest.TestCase
 # @ddt
 class CaseDemo(unittest.TestCase):
@@ -57,19 +56,19 @@ class CaseDemo(unittest.TestCase):
     #     for text in listx:
     #         self.test_1(text)
 
-    def test_2(self):
-        self.driver.find_element('id', 'kw').send_keys('lllllllllllllllllll')
-        self.driver.find_element('id', 'su').click()
-        time.sleep(4)
+    # def test_2(self):
+    #     self.driver.find_element('id', 'kw').send_keys('lllllllllllllllllll')
+    #     self.driver.find_element('id', 'su').click()
+    #     time.sleep(4)
 
     #
-    def test_3(self):
-        self.driver.find_element('id', 'kw').clear()
-        self.driver.find_element('id', 'kw').send_keys('A1s我')
-        self.driver.find_element('id', 'su').click()
-        time.sleep(4)
+    # def test_3(self):
+    #     self.driver.find_element('id', 'kw').clear()
+    #     self.driver.find_element('id', 'kw').send_keys('A1s我')
+    #     self.driver.find_element('id', 'su').click()
+    #     time.sleep(4)
 
 
 # 运行UnitTest中的测试用例 通过MAIN函数运行
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
