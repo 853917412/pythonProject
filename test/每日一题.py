@@ -191,7 +191,7 @@ def p_670(self, num: int) -> int:
     num[x] = nums[x]
     num[b] = a
     return (int(''.join(num)))
-"""
+"""!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。
 """
 def p_1624(arr):
@@ -205,3 +205,20 @@ def p_1624(arr):
     return (minnum)
 if __name__ == '__main__':
     pass
+
+"""!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+给你一个整数数组 arr ，数组中的每个整数 互不相同 。另有一个由整数数组构成的数组 pieces，其中的整数也 互不相同 。
+请你以 任意顺序 连接 pieces 中的数组以形成 arr 。但是，不允许 对每个数组 pieces[i] 中的整数重新排序。
+如果可以连接 pieces 中的数组形成 arr ，返回 true ；否则，返回 false 
+"""
+def p_1640(arr,pieces):
+    d = {p[0]: p for p in pieces}
+    i, n = 0, len(arr)
+    while i < n:
+        if arr[i] not in d:
+            return False
+        p = d[arr[i]]
+        if arr[i: i + len(p)] != p:
+            return False
+        i += len(p)
+    return True
