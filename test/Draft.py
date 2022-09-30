@@ -42,17 +42,27 @@ class tools_box():
             print("不存在该工具")
 
     def show_tools(self):
+        if self.tools == []:
+            print("箱子内没有工具")
         for i in range(0, len(self.tools)):
             self.tools[i].show()
-def p_1640(arr,pieces):
-    d = {p[0]: p for p in pieces}
-    i, n = 0, len(arr)
-    while i < n:
-        if arr[i] not in d:
-            return False
-        p = d[arr[i]]
-        if arr[i: i + len(p)] != p:
-            return False
-        i += len(p)
-    return True
-exploe([91,4,64,78],[[78],[4,64],[91]])
+
+def p_1_08(arr):
+    dic = []
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if arr[i][j] == 0:
+                dic.append([i,j])
+    for i in dic:
+        arr[i[0]] = [0]*len(arr[0])
+        for x in range(len(arr)):
+            arr[x][i[1]] = 0
+    return arr
+
+
+    print(dic)
+p_1_08([
+  [0,1,2,0],
+  [3,4,5,2],
+  [1,3,1,5]
+])

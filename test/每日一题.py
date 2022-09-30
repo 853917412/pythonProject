@@ -222,3 +222,18 @@ def p_1640(arr,pieces):
             return False
         i += len(p)
     return True
+
+"""
+编写一种算法，若M × N矩阵中某个元素为0，则将其所在的行与列清零。
+"""
+def p_1_08(arr):
+    dic = []
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if arr[i][j] == 0:
+                dic.append([i,j])
+    for i in dic:
+        arr[i[0]] = [0]*len(arr[0])
+        for x in range(len(arr)):
+            arr[x][i[1]] = 0
+    return arr
