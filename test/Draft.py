@@ -47,22 +47,15 @@ class tools_box():
         for i in range(0, len(self.tools)):
             self.tools[i].show()
 
-def p_1_08(arr):
-    dic = []
-    for i in range(len(arr)):
-        for j in range(len(arr[i])):
-            if arr[i][j] == 0:
-                dic.append([i,j])
-    for i in dic:
-        arr[i[0]] = [0]*len(arr[0])
-        for x in range(len(arr)):
-            arr[x][i[1]] = 0
-    return arr
+def p_1662(word1, word2):
+
+    x = ''.join(word1)
+    y = ''.join(word2)
+    if x == y:
+        return True
+    else:
+        return False
 
 
-    print(dic)
-p_1_08([
-  [0,1,2,0],
-  [3,4,5,2],
-  [1,3,1,5]
-])
+p_1662(["a", "bc"],["ab", "c"])
+

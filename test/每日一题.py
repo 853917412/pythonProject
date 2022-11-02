@@ -237,3 +237,16 @@ def p_1_08(arr):
         for x in range(len(arr)):
             arr[x][i[1]] = 0
     return arr
+
+"""
+给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串是由数组中的所有元素 按顺序 连接形成的字符串。
+"""
+def p_1662(word1, word2):
+
+    x = ''.join(word1)
+    y = ''.join(word2)
+    if x == y:
+        return True
+    else:
+        return False
