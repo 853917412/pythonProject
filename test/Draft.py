@@ -30,32 +30,29 @@ class toolsx():
 
 class tools_box():
     tools = []
-    def add_tools(self,tools_obj: toolsx):
-        if tools_obj not in self.tools:
-            self.tools.append(tools_obj)
+    def add_tools(self,toolsx_obj: toolsx):
+        if toolsx_obj not in self.tools:
+            self.tools.append(toolsx_obj)
         else:
             print("已存在工具")
-    def remove_tools(self,tools_obj: toolsx):
-        if tools_obj in self.tools:
-            self.tools.remove(tools_obj)
+    def remove_tools(self,toolsx_obj: toolsx):
+        if toolsx_obj in self.tools:
+            self.tools.remove(toolsx_obj)
         else:
             print("不存在该工具")
-
+    def __x1(self):
+        print("这是私有方法")
     def show_tools(self):
         if self.tools == []:
             print("箱子内没有工具")
         for i in range(0, len(self.tools)):
             self.tools[i].show()
 
-def p_1662(word1, word2):
+def p_1678(command):
+    dic = {'G':'G','()': 'o','(al)': 'al'}
 
-    x = ''.join(word1)
-    y = ''.join(word2)
-    if x == y:
-        return True
-    else:
-        return False
+p_1678("G()(al)")
 
 
-p_1662(["a", "bc"],["ab", "c"])
+
 
