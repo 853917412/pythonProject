@@ -250,3 +250,16 @@ def p_1662(word1, word2):
         return True
     else:
         return False
+
+def p_1684(allowed,words):
+    x = len(words)
+    for i in words:
+        o = 0
+        for j in i:
+            if j in allowed:
+                o+=1
+            else:
+                x-=1
+                break
+    print(x)
+    return x
