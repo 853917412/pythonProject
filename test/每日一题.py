@@ -261,5 +261,35 @@ def p_1684(allowed,words):
             else:
                 x-=1
                 break
-    print(x)
+    return x
+
+"""
+给你一个偶数长度的字符串 s 。将其拆分成长度相同的两半，前一半为 a ，后一半为 b 。
+两个字符串 相似 的前提是它们都含有相同数目的元音（'a'，'e'，'i'，'o'，'u'，'A'，'E'，'I'，'O'，'U'）。注意，s 可能同时含有大写和小写字母。
+如果 a 和 b 相似，返回 true ；否则，返回 false 。
+"""
+def p_1704(s):
+    cnt, n = 0, len(s) >> 1
+    vowels = set('aeiouAEIOU')
+    for i in range(n):
+        cnt += s[i] in vowels
+        cnt -= s[i + n] in vowels
+    return cnt == 0
+
+"""
+请你将一些箱子装在 一辆卡车 上。给你一个二维数组 boxTypes ，其中 boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi] ：
+numberOfBoxesi 是类型 i 的箱子的数量。
+numberOfUnitsPerBoxi 是类型 i每个箱子可以装载的单元数量。
+整数 truckSize 表示卡车上可以装载 箱子 的 最大数量 。只要箱子数量不超过 truckSize ，你就可以选择任意箱子装到卡车上。
+返回卡车可以装载单元 的 最大 总数。
+"""
+def p_1710(boxTypes, truckSize):
+    boxTypes.sort(key=lambda x: x[1], reverse=True)
+    x = 0
+    for i0,i1 in boxTypes:
+        if truckSize < i0:
+            x+=truckSize * i1
+            break
+        x += i0 * i1
+        truckSize = truckSize - i0
     return x

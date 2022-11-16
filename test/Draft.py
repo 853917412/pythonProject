@@ -34,14 +34,15 @@
 #     print(ans)
 #     return ans
 
-def p_1704(s):
-    cnt, n = 0, len(s) >> 1
-    vowels = set('aeiouAEIOU')
-    for i in range(n):
-        cnt += s[i] in vowels
-        cnt -= s[i + n] in vowels
-    return cnt == 0
-p_1704("textbook")
 
+def p_775(nums):
+    n =len(nums)
+    x = nums[0]
+    for i in range(2,n):
+        if x>nums[i]:
+            return False
+        x = max(x, nums[i-1])
+    return True
+print(p_775([3,2]))
 
 
