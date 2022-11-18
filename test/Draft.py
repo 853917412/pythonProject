@@ -43,6 +43,11 @@ def p_775(nums):
             return False
         x = max(x, nums[i-1])
     return True
-print(p_775([3,2]))
+
+def p_792(s ,words):
+
+p_792(  s = "dsa", words = ["dsa"])
+
+
 
 
