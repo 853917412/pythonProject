@@ -293,3 +293,35 @@ def p_1710(boxTypes, truckSize):
         x += i0 * i1
         truckSize = truckSize - i0
     return x
+
+def p_1742(low,high):
+    result = {}
+    for i in range(low,high+1):
+        x = (sum(map(int, str(i))))
+        if x not in result.keys():
+            result.update({x:1})
+        else:
+            result[x]+=1
+    return (max(result.values()))
+
+def p_775(nums):
+    n =len(nums)
+    x = nums[0]
+    for i in range(2,n):
+        if x>nums[i]:
+            return False
+        x = max(x, nums[i-1])
+    return True
+
+def p_795(nums, left, right):
+    res = 0
+    last2 = last1 = -1
+    for i, x in enumerate(nums):
+        if left <= x <= right:
+            last1 = i
+        elif x > right:
+            last2 = i
+            last1 = -1
+        if last1 != -1:
+            res += last1 - last2
+    return (res)

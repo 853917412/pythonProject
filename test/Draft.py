@@ -35,19 +35,13 @@
 #     return ans
 
 
-def p_775(nums):
-    n =len(nums)
-    x = nums[0]
-    for i in range(2,n):
-        if x>nums[i]:
-            return False
-        x = max(x, nums[i-1])
-    return True
 
-def p_792(s ,words):
+def p_809(s, words) -> int:
 
-p_792(  s = "dsa", words = ["dsa"])
-
+if __name__ == "__main__":
+    file = open(file=(r"C:\Users\yihao.sun\Desktop\工作文档\历史问题.txt"), mode="r",encoding="utf-8")
+    my_file = file.read()
+    print(my_file)
 
 
 
