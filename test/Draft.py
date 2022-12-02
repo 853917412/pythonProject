@@ -3,7 +3,6 @@
 # import unittest
 # import warnings
 # import time
-# import time
 # import numpy as np
 # from ddt import ddt, data, unpack, file_data
 # from pywin.dialogs import login
@@ -33,15 +32,17 @@
 #             ans = max(ans, min(min(a[i][j], b[i][j]), min(c[i][j], d[i][j])))
 #     print(ans)
 #     return ans
+from math import inf
 
 
 
-def p_809(s, words) -> int:
+
 
 if __name__ == "__main__":
-    file = open(file=(r"C:\Users\yihao.sun\Desktop\工作文档\历史问题.txt"), mode="r",encoding="utf-8")
-    my_file = file.read()
-    print(my_file)
+    s = '1010101'
+    s = s.replace('1','000',1)
+    print(s)
+
 
 
 

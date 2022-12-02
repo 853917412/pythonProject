@@ -325,3 +325,25 @@ def p_795(nums, left, right):
         if last1 != -1:
             res += last1 - last2
     return (res)
+
+def p_1758(s):
+    # 如果第一个字符为0
+    a = s[0::2].count('1') + s[1::2].count('0')
+    # 如果第一个字符为1
+    b = s[0::2].count('0') + s[1::2].count('1')
+    return (min(a, b))
+
+def p_1779(x: int, y: int, points) -> int:
+    mlong = float(inf)
+    result = float(inf)
+    for i in range(0, len(points)):
+
+        if (points[i][0] == x) or (points[i][1] == y):
+            e = (abs(points[i][0] - x) + abs(points[i][1] - y))
+            if e < mlong:
+                mlong = e
+                result = i
+    if mlong == float(inf):
+        return -1
+    else:
+        return result
