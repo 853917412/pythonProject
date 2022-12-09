@@ -347,3 +347,20 @@ def p_1779(x: int, y: int, points) -> int:
         return -1
     else:
         return result
+
+def p_1805(word):
+    results = []
+    for i in word:
+        if i.isalpha():
+            word = word.replace(i,' ')
+    for i in word.split(' '):
+        if i != '':
+            results.append(int(i))
+    return (len(set(results)))
+
+def p_1780(n):
+    while n>0:
+        if n % 3 == 2 :
+            return False
+        n //= 3
+    return True

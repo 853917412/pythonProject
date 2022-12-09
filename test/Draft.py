@@ -1,47 +1,18 @@
-# x = (2, 1, 0)
-# print("".join('%s' %id for id in x))
-# import unittest
-# import warnings
-# import time
-# import numpy as np
-# from ddt import ddt, data, unpack, file_data
-# from pywin.dialogs import login
-# from selenium import webdriver
-
-
-
-
-
-# def p_764(n, mines) -> int:
-#     g = [[1] * (n + 10) for _ in range(n + 10)]
-#     for x, y in mines:
-#         g[x + 1][y + 1] = 0
-#     a, b, c, d = [[0] * (n + 10) for _ in range(n + 10)], [[0] * (n + 10) for _ in range(n + 10)], [
-#         [0] * (n + 10) for _ in range(n + 10)], [[0] * (n + 10) for _ in range(n + 10)]
-#     for i in range(1, n + 1):
-#         for j in range(1, n + 1):
-#             if g[i][j] == 1:
-#                 a[i][j] = a[i - 1][j] + 1
-#                 b[i][j] = b[i][j - 1] + 1
-#             if g[n + 1 - i][n + 1 - j] == 1:
-#                 c[n + 1 - i][n + 1 - j] = c[n + 2 - i][n + 1 - j] + 1
-#                 d[n + 1 - i][n + 1 - j] = d[n + 1 - i][n + 2 - j] + 1
-#     ans = 0
-#     for i in range(1, n + 1):
-#         for j in range(1, n + 1):
-#             ans = max(ans, min(min(a[i][j], b[i][j]), min(c[i][j], d[i][j])))
-#     print(ans)
-#     return ans
-from math import inf
+from openpyxl import load_workbook
 
 
 
 
 
 if __name__ == "__main__":
-    s = '1010101'
-    s = s.replace('1','000',1)
-    print(s)
+    #获取表对象
+    wb = load_workbook(filename=(r'D:\pythonProject\Note\2 自动化阶段\15、20220413excel操作+excel数据读取封装+unittest框架(一)\day15\case_data.xlsx'))
+    #获取sheet对象
+    sheet_obj = wb['login']
+    #行切片
+    result = sheet_obj.iter_rows(min_row=1,max_row=1,min_col=3,max_col=3,values_only=True)
+    print(sheet_obj.max_column)
+    wb.close()
 
 
 
