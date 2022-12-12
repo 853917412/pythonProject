@@ -1,0 +1,9 @@
+key1: val1
+key2:
+  key22: val22
+key3:
+  - val1
+  - val2
+  - val3
+  - val4
+

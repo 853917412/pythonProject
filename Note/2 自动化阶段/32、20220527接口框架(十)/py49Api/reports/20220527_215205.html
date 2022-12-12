@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试报告</title>
+
+       <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src=" https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/5.1.2/echarts.min.js"></script>
+    <!--    页面样式-->
+    <style type="text/css">
+        /*标题样式*/
+        .title {
+            width: auto;
+            height: 60px;
+            text-align: center;
+            font: bolder 38px/60px "Microsoft YaHei UI";
+        }
+
+        /*汇总信息样式*/
+        .summary {
+            width: 90%;
+            position: absolute;
+            top: 120px;
+            margin-left: 5%;
+
+        }
+
+        .text-left {
+            font: bolder 20px/30px "Microsoft YaHei UI";
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+
+        }
+
+        .desc {
+            float: left;
+            width: 100%;
+        }
+
+        .list-group-item span {
+            font: normal 16px/38px "Microsoft YaHei UI";
+            padding: 30px;
+
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: .4rem 1.25rem;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, .125);
+        }
+
+        /* 执行信息样式   */
+        .test_info {
+            width: 90%;
+            position: absolute;
+            top: 900px;
+            margin-left: 5%;
+
+            color: #28a745 !important;
+        }
+
+        .table td, th {
+            border: solid 2px rgba(9, 122, 51, 0.11) !important;
+            padding: 0;
+            line-height: 40px;
+            text-align: center;
+
+        }
+
+
+        select {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            height: 2em;
+            width: 8em;
+            margin-left: 2em;
+        }
+
+        option {
+            text-align: center;
+            height: 36px;
+            font: none 18px/36px "Microsoft YaHei UI";
+            color: #28a745 !important;
+        }
+
+        .test_log {
+            background: rgba(163, 171, 189, 0.15);
+            width: 100%;
+            height: 50px;
+            border-top: none;
+            border-bottom: none;
+            display: none;
+            text-align: left;
+        }
+
+        .test_log td {
+            text-align: left;
+            height: 30px;
+            margin: 0;
+            padding-left: 3em;
+            padding-right:3em;
+            font: none 18px/24px "Microsoft YaHei UI";
+            color: #9e141a;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            line-height: 22px;
+            font-size: 14px
+        }
+
+        /*    测试图表显示*/
+        .char {
+            width: 90%;
+            position: absolute;
+            top: 450px;
+            margin-left: 5%;
+            color: #28a745 !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--报告标题-->
+<div class="title text-success">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">py49期接口测试报告</div>
+</div>
+
+<!--汇总信息-->
+<div class="summary">
+    <p class="text-left text-success">测试结果汇总</p>
+    <div class="left">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">测试人员</button>
+                <span class="text-dark">老柠檬</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">开始时间</button>
+                <span class="text-dark">2022-05-27 21:52:06</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">执行时间</button>
+                <span class="text-dark">2.36 S</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">用例总数</button>
+                <span class="text-dark">6</span>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="right">
+        <ul class="list-group">
+
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">成功用例</button>
+                <span class="text-success">4</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-warning">失败用例</button>
+                <span class="text-warning">2</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-danger">错误用例</button>
+                <span class="text-danger">0</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-secondary">跳过用例</button>
+                <span class="text-secondary">0</span>
+            </li>
+        </ul>
+    </div>
+    <div class="desc">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <button type="button" class="btn btn-success">描述信息</button>
+                <span class="text-secondary">接口自动化测试报告</span>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<!--测试图表-->
+<div class="char">
+    <p class="text-left text-success">图表展示</p>
+    <div id="char2" style="width: 49%;height: 400px;float: left"></div>
+    <div id="char" style="width: 49%;height: 400px ;float: left"></div>
+</div>
+
+<!--详细信息-->
+<div class="test_info">
+
+    <p class="text-left text-success">详细信息</p>
+    <div class="table_data">
+
+        <table class="table">
+            <thead class="bg-success text-light">
+            <tr>
+                <th scope="col" style="width: 5%;padding: 0">编号</th>
+                <th scope="col" style="width: 20%;padding: 0">
+                    <span>测试类</span>
+                    <select id="testClass">
+                        <option>所有</option>
+                        
+                            <option>TestPlaceOrder</option>
+                        
+                    </select>
+
+                </th>
+
+                <th scope="col" style="width: 15%;padding: 0">测试方法</th>
+                <th scope="col" style="width: 20%;padding: 0">用例描述</th>
+                <th scope="col" style="width: 15%;padding: 0">执行时间</th>
+                <th scope="col" style="width: 20%;padding: 0">
+
+                    <span>执行结果</span>
+                    <select id="testResult">
+                        <option>所有</option>
+                        <option class="text-success">成功</option>
+                        <option class="text-warning">失败</option>
+                        <option class="text-danger">错误</option>
+                        <option class="text-info">跳过</option>
+                    </select>
+
+                </th>
+                <th scope="col" style="width: 10%;padding: 0">详细信息</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_001</td>
+                    <td>登陆成功</td>
+                    <td>0.453s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 1, 'title': '登陆成功', 'method': 'post', 'is_upload': None, 'port': 8107, 'url': '/login', 'data': '{\n"principal": "18645006197",\n"credentials": "123456",\n"appType": 3,\n"loginType": 0\n}', 'setup_sql': None, 'expected_data': '{"token_type": "bearer"}', 'extract_data': '{"access_token":"$..access_token"}', 'assert_db': None}
+excel中setup_sql字段为空，不需要设置全局属性
+不需要替换参数
+url地址不需要替换
+该接口不需要鉴权
+处理后的响应结果：
+{'response_type': 'json', 'response': {'access_token': '1685c53b-5b1e-43ee-8a80-772843043ad7', 'token_type': 'bearer', 'refresh_token': 'fcb93636-38c7-4de1-9962-1db4300a8f14', 'expires_in': 1295999, 'pic': None, 'userId': '872f654ef65f46e59dcef4c0b50e3d0a', 'nickName': '18645006197', 'enabled': True}}
+期望结果： {'token_type': 'bearer'}
+通过期望结果的key，组成实际结果
+实际结果： {'token_type': 'bearer'}
+excel中assert_db字段为空，不需要做数据库断言
+test_place_order_001 (test_6_place_order.TestPlaceOrder)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_002</td>
+                    <td>获取秒杀订单地址</td>
+                    <td>0.317s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 2, 'title': '获取秒杀订单地址', 'method': 'get', 'is_upload': None, 'port': 8107, 'url': '/p/seckill/orderPath', 'data': None, 'setup_sql': None, 'expected_data': None, 'extract_data': '{"order_path":"$..response"}', 'assert_db': None}
+excel中setup_sql字段为空，不需要设置全局属性
+请求参数为空，不需要进行参数替换
+url地址不需要替换
+处理后的响应结果：
+{'response_type': 'str', 'response': '3y0FzcCPK0u'}
+excel中expected_data期望结果为空，不需要断言
+excel中assert_db字段为空，不需要做数据库断言
+test_place_order_002 (test_6_place_order.TestPlaceOrder)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_003</td>
+                    <td>创建订单</td>
+                    <td>0.635s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 3, 'title': '创建订单', 'method': 'post', 'is_upload': None, 'port': 8107, 'url': 'http://mall.lemonban.com:8107/p/seckill/#order_path#/confirm', 'data': '{\n"addrId": 0,\n"prodCount": 1,\n"seckillSkuId":100\n}', 'setup_sql': '["SELECT seckill_sku_id FROM tz_seckill_sku WHERE seckill_stocks>0 AND seckill_id IN (SELECT seckill_id FROM tz_seckill WHERE max_num = -1 and  STATUS = 1 AND seckill_total_stocks >0 AND seckill_origin_stocks > 0) LIMIT 1"]', 'expected_data': None, 'extract_data': None, 'assert_db': None}
+不需要替换sql语句直接返回
+[{'seckill_sku_id': 73}] <class 'list'>
+不需要替换参数
+处理后的响应结果：
+{'response_type': 'json', 'response': {'actualTotal': 0.01, 'total': 0.01, 'seckillReduce': 0.0, 'transfee': 0.0, 'totalCount': 1, 'userAddr': {'addrId': 498, 'receiver': '老王', 'province': '上海市', 'city': '市辖区', 'area': '闵行区', 'addr': '龙吴路5555', 'mobile': '18645006197', 'lng': 0.0, 'lat': 0.0, 'commonAddr': 1, 'provinceId': 31, 'cityId': 3101, 'areaId': 310112}, 'shopCartItem': {'prodName': 'py49接口自动化专用', 'prodNameCn': 'py49接口自动化专用', 'prodNameEn': 'py49接口自动化专用', 'prodCount': 1, 'pic': 'http://mall.lemonban.com:8108/2022/05/d258808d5ffe4da9817d8af5868a57f2.jpg', 'price': 0.01, 'categoryId': None, 'productTotalAmount': 0.01, 'prodId': 525, 'skuId': 7712, 'skuName': '', 'useScore': None, 'scorePrice': 0, 'basketId': None, 'actualTotal': 0.01, 'discountId': 0, 'shareReduce': 0.0, 'isShareReduce': None, 'scorePayReduce': None, 'discounts': [], 'deliveryMode': None, 'deliveryModeVO': None, 'isCheck': None, 'shopId': 1, 'shopName': None, 'oriPrice': None, 'distributionCardNo': None, 'basketDate': '2022-05-27 21:52:06', 'preSellStatus': None, 'preSellTime': None, 'shopCityStatus': None, 'seckillSkuId': 100, 'seckillId': 61, 'seckillPrice': 0.01}, 'msgId': None, 'userId': None, 'remarks': None, 'orderNumber': None}}
+excel中expected_data期望结果为空，不需要断言
+excel中extract_data为空，不需要提取全局变量
+excel中assert_db字段为空，不需要做数据库断言
+test_place_order_003 (test_6_place_order.TestPlaceOrder)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_004</td>
+                    <td>提交订单</td>
+                    <td>0.222s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 4, 'title': '提交订单', 'method': 'post', 'is_upload': None, 'port': 8107, 'url': 'http://mall.lemonban.com:8107/p/seckill/#order_path#/submit', 'data': '{\n"orderShopParam": {\n"remarks": "",\n"shopId": 1\n},\n"orderPath": "#order_path#"\n}', 'setup_sql': None, 'expected_data': '{"duplicateError":null}', 'extract_data': '{"orderNumbers":"$..orderNumbers"}', 'assert_db': None}
+excel中setup_sql字段为空，不需要设置全局属性
+暂不支持该类型参数替换
+转换数据： <class 'dict'> {'orderShopParam': {'remarks': '', 'shopId': 1}, 'orderPath': '3y0FzcCPK0u'}
+处理后的响应结果：
+{'response_type': 'json', 'response': {'orderNumbers': '1530185079912140800', 'duplicateError': None}}
+期望结果： {'duplicateError': None}
+通过期望结果的key，组成实际结果
+实际结果： {'duplicateError': None}
+excel中assert_db字段为空，不需要做数据库断言
+test_place_order_004 (test_6_place_order.TestPlaceOrder)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_005</td>
+                    <td>支付下单</td>
+                    <td>0.354s</td>
+                    
+                        <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 5, 'title': '支付下单', 'method': 'post', 'is_upload': None, 'port': None, 'url': 'http://mall.lemonban.com:8107/p/order/pay', 'data': '{\n"payType": 3,\n"orderNumbers": "#orderNumbers#"\n}', 'setup_sql': None, 'expected_data': None, 'extract_data': None, 'assert_db': '{"expected_data":1,"actual_data":"SELECT COUNT(*) FROM tz_order WHERE order_number=\'#orderNumbers#\'"}'}
+excel中setup_sql字段为空，不需要设置全局属性
+暂不支持该类型参数替换
+转换数据： <class 'dict'> {'payType': 3, 'orderNumbers': '1530185079912140800'}
+url地址不需要替换
+处理后的响应结果：
+{'response_type': 'json', 'response': {'timestamp': '2022-05-27 21:52:07', 'status': 500, 'error': 'Internal Server Error', 'message': '', 'path': '/p/order/pay'}}
+excel中expected_data期望结果为空，不需要断言
+excel中extract_data为空，不需要提取全局变量
+暂不支持该类型参数替换
+[{'COUNT(*)': 0}]
+test_place_order_005 (test_6_place_order.TestPlaceOrder)执行——>【失败】
+</pre>
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\site-packages\unittestreport\core\dataDriver.py", line 18, in wrapper
+    return func(self, params, *args, **kwargs)
+</pre>
+                        
+
+                            <pre>  File "D:\vip_class\py49Api\test_cases\test_6_place_order.py", line 64, in test_place_order
+    self.handle_assert_db.assert_db(assert_db=case["assert_db"])
+</pre>
+                        
+
+                            <pre>  File "D:\vip_class\py49Api\tools\handle_assert_db.py", line 47, in assert_db
+    self.my_assert.assertEqual(assert_db["expected_data"],sql_result[0])
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 852, in assertEqual
+    assertion_func(first, second, msg=msg)
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 845, in _baseAssertEqual
+    raise self.failureException(msg)
+</pre>
+                        
+
+                            <pre>AssertionError: 1 != 0
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="TestPlaceOrder">TestPlaceOrder</td>
+                    <td>test_place_order_006</td>
+                    <td>回调</td>
+                    <td>0.318s</td>
+                    
+                        <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>{'id': 6, 'title': '回调', 'method': 'post', 'is_upload': None, 'port': None, 'url': 'http://mall.lemonban.com:8107/notice/pay/3', 'data': '{\n"payNo":"#orderNumbers#",\n"bizPayNo":#times#,\n"isPaySuccess":true\n}', 'setup_sql': None, 'expected_data': '{"response":"success"}', 'extract_data': None, 'assert_db': None}
+excel中setup_sql字段为空，不需要设置全局属性
+暂不支持该类型参数替换
+需要替换key=times
+转换数据： <class 'dict'> {'payNo': '1530185079912140800', 'bizPayNo': 1653659528211, 'isPaySuccess': True}
+url地址不需要替换
+处理后的响应结果：
+{'response_type': 'json', 'response': {'timestamp': '2022-05-27 21:52:07', 'status': 500, 'error': 'Internal Server Error', 'message': '', 'path': '/notice/pay/3'}}
+期望结果： {'response': 'success'}
+通过期望结果的key，组成实际结果
+实际结果： {'response': {'timestamp': '2022-05-27 21:52:07', 'status': 500, 'error': 'Internal Server Error', 'message': '', 'path': '/notice/pay/3'}}
+test_place_order_006 (test_6_place_order.TestPlaceOrder)执行——>【失败】
+</pre>
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\site-packages\unittestreport\core\dataDriver.py", line 18, in wrapper
+    return func(self, params, *args, **kwargs)
+</pre>
+                        
+
+                            <pre>  File "D:\vip_class\py49Api\test_cases\test_6_place_order.py", line 60, in test_place_order
+    self.handle_response.assert_response(expected_data=case["expected_data"],response=response)
+</pre>
+                        
+
+                            <pre>  File "D:\vip_class\py49Api\tools\handle_response.py", line 55, in assert_response
+    self.my_assert.assertEqual(expected_data,actual_data)
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 852, in assertEqual
+    assertion_func(first, second, msg=msg)
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 1151, in assertDictEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+</pre>
+                        
+
+                            <pre>  File "D:\ProgramFiles\python37\lib\unittest\case.py", line 693, in fail
+    raise self.failureException(msg)
+</pre>
+                        
+
+                            <pre>AssertionError: {'response': 'success'} != {'response': {'timestamp': '2022-05-27 21:52:07', 'sta[80 chars]/3'}}
+- {'response': 'success'}
++ {'response': {'error': 'Internal Server Error',
++               'message': '',
++               'path': '/notice/pay/3',
++               'status': 500,
++               'timestamp': '2022-05-27 21:52:07'}}
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height: 200px"></div>
+</div>
+
+
+<script>
+    var tbodyTr = $('tbody tr');
+    var testResult = $("#testResult");
+    var testClass = $("#testClass");
+    <!--    用例执行详细信息显示切换-->
+    $(".btn_info").click(function () {
+        $(this).parent().parent().next().toggle();
+
+    });
+    // 当选择用例类之后触发
+    testClass.change(function () {
+        var cls = $(this).val();
+        var res = testResult.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+    testResult.change(function () {
+        var res = $(this).val();
+        var cls = testClass.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+
+    function elementDisplay(cls, res) {
+        // 用例数据的显示
+        if (cls === "所有") {
+            if (res === "所有") {
+                tbodyTr.has('button').show();
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-success').show()
+
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-warning').show()
+
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-danger').show()
+
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-info').show()
+            }
+        } else {
+            if (res === "所有") {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').show()
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-success').show()
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-warning').show()
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-danger').show()
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-info').show()
+            }
+        }
+    }
+
+    function sort() {
+        //重新排列显示序号
+        // 选择所有可以见的tr
+        var visibleTr = tbodyTr.filter(":visible");
+
+        visibleTr.each(function (index, element) {
+            element.firstElementChild.innerHTML = index + 1;
+
+        })
+
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('char'));
+    var myChart2 = echarts.init(document.getElementById('char2'));
+    // 指定图表的配置项和数据
+    option = {
+        color: ['#00a10a', '#ddb518', 'rgba(204,46,41,0.73)', '#85898c'],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 10,
+            data: ['通过', '失败', '错误', '跳过']
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: 4, name: '通过'},
+                    {value: 2, name: '失败'},
+                    {value: 0, name: '错误'},
+                    {value: 0, name: '跳过'}
+                ]
+            }
+        ]
+    };
+    option2 = {
+        tooltip: {
+            formatter: '{a} <br/>{b} : {c}%'
+        },
+        toolbox: {
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+            {
+                name: '测试结果',
+                type: 'gauge',
+                detail: {formatter: '66.67%'},
+                data: [{value: '66.67', name: '用例通过率'}],
+                axisLine: {
+                    lineStyle: {
+                        color: [
+                            [0.2, '#c20000'],
+                            [0.8, '#ddb518'],
+                            [1, '#00a10a']]
+                    }
+                }
+            }
+        ]
+    };
+
+
+    myChart2.setOption(option2);
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+</body>
+</html>

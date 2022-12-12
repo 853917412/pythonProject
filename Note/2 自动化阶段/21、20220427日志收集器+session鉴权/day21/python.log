@@ -1,0 +1,10 @@
+py49-INFO-2022-04-27 21:27:36,699-D:/vip_class/py49/day21/demo02.py-71>>>: info级别的日志
+py49-INFO-2022-04-27 21:35:56,523-D:/vip_class/py49/day21/demo04.py-19>>>: test01
+py49-INFO-2022-04-27 21:35:56,523-D:/vip_class/py49/day21/demo04.py-20>>>: test02
+py49-INFO-2022-04-27 21:36:30,015-D:/vip_class/py49/day21/demo04.py-19>>>: test01
+py49-INFO-2022-04-27 21:36:30,015-D:/vip_class/py49/day21/demo04.py-20>>>: test02
+py49-INFO-2022-04-27 21:36:30,015-D:/vip_class/py49/day21/demo04.py-23>>>: test03
+py49-INFO-2022-04-27 21:36:30,015-D:/vip_class/py49/day21/demo04.py-23>>>: test03
+py49-INFO-2022-04-27 21:40:17,133-D:/vip_class/py49/day21/demo04.py-19>>>: test01
+py49-INFO-2022-04-27 21:40:17,133-D:/vip_class/py49/day21/demo04.py-20>>>: test02
+py49-INFO-2022-04-27 21:40:17,133-D:/vip_class/py49/day21/demo04.py-23>>>: test03

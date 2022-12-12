@@ -1,0 +1,82 @@
+py49-INFO-2022-05-30 20:08:33,283-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:33,283-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 20:08:33,485-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:33,486-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 20:08:33,596-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:33,597-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:["SELECT seckill_sku_id FROM tz_seckill_sku WHERE seckill_stocks>0 AND seckill_id IN (SELECT seckill_id FROM tz_seckill WHERE max_num = -1 and  STATUS = 1 AND seckill_total_stocks >0 AND seckill_origin_stocks > 0) LIMIT 1"],数据类型<class 'str'>--
+py49-INFO-2022-05-30 20:08:33,597-D:\vip_class\py49Api\tools\handle_replace.py-178>>>: 不需要替换sql语句直接返回
+py49-INFO-2022-05-30 20:08:33,597-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT seckill_sku_id FROM tz_seckill_sku WHERE seckill_stocks>0 AND seckill_id IN (SELECT seckill_id FROM tz_seckill WHERE max_num = -1 and  STATUS = 1 AND seckill_total_stocks >0 AND seckill_origin_stocks > 0) LIMIT 1--
+py49-INFO-2022-05-30 20:08:33,824-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:33,824-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 20:08:34,040-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:34,040-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 20:08:34,597-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 20:08:34,597-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT COUNT(*) FROM tz_order WHERE order_number='#orderNumbers#'--
+py49-INFO-2022-05-30 20:08:34,598-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：orderNumbers
+py49-INFO-2022-05-30 20:08:34,598-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：orderNumbers找到的全局属性的值:1531246182637244416
+py49-INFO-2022-05-30 20:08:34,598-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT COUNT(*) FROM tz_order WHERE order_number='1531246182637244416'--
+py49-INFO-2022-05-30 20:08:34,632-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 20:08:34,633-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:01,160-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:01,160-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:01,611-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:01,612-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:01,866-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:01,866-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,080-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,081-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,210-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 21:02:02,210-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT COUNT(*)  FROM tz_attach_file WHERE file_path='#file_path#'--
+py49-INFO-2022-05-30 21:02:02,210-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：file_path
+py49-INFO-2022-05-30 21:02:02,211-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：file_path找到的全局属性的值:2022/05/013c8ea6cf2843ad9d07f3e137f74721.jpg
+py49-INFO-2022-05-30 21:02:02,211-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT COUNT(*)  FROM tz_attach_file WHERE file_path='2022/05/013c8ea6cf2843ad9d07f3e137f74721.jpg'--
+py49-INFO-2022-05-30 21:02:02,317-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,317-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,513-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,513-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,586-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 21:02:02,586-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT COUNT(*)  FROM tz_attach_file WHERE file_path='#file_path#'--
+py49-INFO-2022-05-30 21:02:02,587-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：file_path
+py49-INFO-2022-05-30 21:02:02,587-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：file_path找到的全局属性的值:2022/05/0f7622c0f2354b7cb246ef3f6af2adc7.jpg
+py49-INFO-2022-05-30 21:02:02,588-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT COUNT(*)  FROM tz_attach_file WHERE file_path='2022/05/0f7622c0f2354b7cb246ef3f6af2adc7.jpg'--
+py49-INFO-2022-05-30 21:02:02,625-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,625-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,721-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 21:02:02,722-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT COUNT(*) FROM tz_prod WHERE prod_id = (SELECT prod_id FROM  tz_sku WHERE party_code ='#partyCode#')--
+py49-INFO-2022-05-30 21:02:02,722-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：partyCode
+py49-INFO-2022-05-30 21:02:02,722-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：partyCode找到的全局属性的值:1653915722625
+py49-INFO-2022-05-30 21:02:02,722-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT COUNT(*) FROM tz_prod WHERE prod_id = (SELECT prod_id FROM  tz_sku WHERE party_code ='1653915722625')--
+py49-INFO-2022-05-30 21:02:02,831-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,831-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:["SELECT mobile_code FROM tz_sms_log WHERE user_phone='#mobile#' order by id desc limit 1"],数据类型<class 'str'>--
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT mobile_code FROM tz_sms_log WHERE user_phone='#mobile#' order by id desc limit 1--
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：mobile
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：mobile找到的全局属性的值:15518741808
+py49-INFO-2022-05-30 21:02:02,968-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT mobile_code FROM tz_sms_log WHERE user_phone='15518741808' order by id desc limit 1--
+py49-INFO-2022-05-30 21:02:03,108-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:03,108-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:03,416-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:03,417-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:03,616-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:03,616-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:03,858-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:03,858-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:04,064-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:04,064-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:04,167-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:04,167-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:["SELECT seckill_sku_id FROM tz_seckill_sku WHERE seckill_stocks>0 AND seckill_id IN (SELECT seckill_id FROM tz_seckill WHERE max_num = -1 and  STATUS = 1 AND seckill_total_stocks >0 AND seckill_origin_stocks > 0) LIMIT 1"],数据类型<class 'str'>--
+py49-INFO-2022-05-30 21:02:04,167-D:\vip_class\py49Api\tools\handle_replace.py-178>>>: 不需要替换sql语句直接返回
+py49-INFO-2022-05-30 21:02:04,167-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT seckill_sku_id FROM tz_seckill_sku WHERE seckill_stocks>0 AND seckill_id IN (SELECT seckill_id FROM tz_seckill WHERE max_num = -1 and  STATUS = 1 AND seckill_total_stocks >0 AND seckill_origin_stocks > 0) LIMIT 1--
+py49-INFO-2022-05-30 21:02:04,365-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:04,365-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:04,608-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:04,608-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
+py49-INFO-2022-05-30 21:02:05,152-D:\vip_class\py49Api\tools\handle_replace.py-166>>>: --需要替换sql语句--
+py49-INFO-2022-05-30 21:02:05,152-D:\vip_class\py49Api\tools\handle_replace.py-167>>>: --替换前sql语句SELECT COUNT(*) FROM tz_order WHERE order_number='#orderNumbers#'--
+py49-INFO-2022-05-30 21:02:05,152-D:\vip_class\py49Api\tools\handle_replace.py-174>>>: sql语句替换的key：orderNumbers
+py49-INFO-2022-05-30 21:02:05,152-D:\vip_class\py49Api\tools\handle_replace.py-175>>>: sql语句替换通过key：orderNumbers找到的全局属性的值:1531259648638980096
+py49-INFO-2022-05-30 21:02:05,152-D:\vip_class\py49Api\tools\handle_replace.py-179>>>: --替换后sql语句SELECT COUNT(*) FROM tz_order WHERE order_number='1531259648638980096'--
+py49-INFO-2022-05-30 21:02:05,182-D:\vip_class\py49Api\tools\handle_replace.py-53>>>: --开始执行前置sql--
+py49-INFO-2022-05-30 21:02:05,183-D:\vip_class\py49Api\tools\handle_replace.py-54>>>: --前置sql入参setup_sql:None,数据类型<class 'NoneType'>--
