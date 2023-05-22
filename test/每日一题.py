@@ -1,5 +1,5 @@
 from typing import List
-
+import re
 
 def p_1464(nums):  # 显示最大值下标
     nums1 = sorted(nums, reverse=True)
@@ -364,3 +364,62 @@ def p_1780(n):
             return False
         n //= 3
     return True
+
+def p_1807(s,knowledge):
+    for (x,y) in knowledge:
+        s = s.replace(('('+x+')'),y)
+    s = re.sub(r'\(.*?\)', '?', s)
+    return (s)
+
+def p_1664(nums:List[int]):
+    result = 0
+    if len(nums) == 1:
+        return 1
+    for i in range(0,len(nums)):
+        nums1 = nums.copy()
+        nums1.pop(i)
+        even = 0
+        odd = 0
+        for i in range(0,len(nums1)):
+            if i % 2 == 0:
+                even +=nums1[i]
+            else:
+                odd +=nums1[i]
+        if even == odd:
+            result +=1
+    print (result)
+
+def p_2315(s):
+    res = flag = 0
+    for ss in s:
+        if ss == "|":
+            flag += 1
+        elif flag % 2 == 0 and ss == "*":
+            res += 1
+    return res
+
+def p_2317(nums):
+    x = len(nums)
+    for i in range(x):
+        for j in range(x):
+            if j == i and nums[i][i] == 0:
+                return False
+            if j + i == x - 1 and nums[i][j] == 0:
+                return False
+            if j != i and j != x - 1 - i and nums[i][j] != 0:
+                return False
+    return True
+
+def p_2325(key,message=None):
+    res = []
+    key = list({}.fromkeys(list(key)).keys())
+    if ' ' in key:
+        key.remove(" ")
+    x = dict(zip(key,'abcdefghijklmnopqrstuvwxyz'))
+    print(x)
+    for i in message:
+        if i == ' ':
+            res.append(' ')
+        else:
+            res.append(x[i])
+    return(''.join(res))
